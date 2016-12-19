@@ -1,0 +1,22 @@
+{
+    "name": "<%= appName %>",
+    "version": "1.0.0",
+    "description": "yaver generator (nusu) tarafından otomatik olarak oluşturulmuştur",
+    "main": "gulpfile.js",
+    "scripts": {
+        "test": ""
+    },
+    "author": "nusususuzu@gmail.com",
+    "license": "MIT",
+    "devDependencies": {
+        "gulp-imagemin": "^2.3.0",
+        "browser-sync": "^2.18.2",
+        "gulp": "^3.9.1",
+        "gulp-concat": "^2.6.1",
+        "gulp-rename": "^1.2.2",
+        "gulp-stylus": "^2.6.0",
+        "gulp-uglify": "^2.0.0",
+        "gulp-watch": "^4.3.11",
+        "pump": "^1.0.1"
+    }
+}

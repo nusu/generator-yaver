@@ -1,0 +1,186 @@
+@import 'triangle-mixin'
+
+// media query
+tablet = "(min-width: 768px)"
+medium = "(min-width: 992px)"
+large = "(min-width: 1200px)"
+
+bp(paramaters)
+  @media paramaters
+    {block}
+
+font-url(file)
+  return '../fonts/' + file
+
+webfont(family, file, hack-chrome-windows = false, weight = '400')
+  @font-face
+    font-family family
+    src url(font-url(file + '.eot'))
+    src url(font-url(file + '.eot?#iefix')) format('embedded-opentype'),
+        url(font-url(file + '.woff')) format('woff'), 
+        url(font-url(file + '.ttf')) format('truetype'), 
+        url(font-url(file + '.svg#'+ family)) format('svg')
+    font-weight weight
+    font-style normal
+  if hack-chrome-windows
+    @media screen and (-webkit-min-device-pixel-ratio:0)
+      @font-face
+        font-family family
+        src url(font-url(file + '.svg#'+ family)) format('svg')
+
+border-radius(n)
+  -webkit-border-radius n
+  -moz-border-radius n
+  border-radius n
+  
+background-size(n)
+  -webkit-background-size: n
+  -moz-background-size: n
+  -o-background-size: n
+  background-size: n
+
+clearfix()
+  +ie(7, true)
+    zoom 1
+
+  &:before
+  &:after
+    content ""
+    display table
+  &:after
+    clear both
+
+animation(ani)
+  -webkit-animation: ani
+  -moz-animation: ani
+  -ms-animation: ani
+  -o-animation: ani
+  animation: ani
+
+animation-delay(ani)
+  -webkit-animation-delay: ani
+  -moz-animation-delay: ani
+  -ms-animation-delay: ani
+  -o-animation-delay: ani
+  animation-delay: ani
+
+animation-name(ani)
+  -webkit-animation-name: ani
+  -moz-animation-name: ani
+  -ms-animation-name: ani
+  -o-animation-name: ani
+  animation-name: ani
+  
+animation-play-state(ani)
+  -webkit-animation-play-state: ani
+  -moz-animation-play-state: ani
+  -ms-animation-play-state: ani
+  -o-animation-play-state: ani
+  animation-play-state: ani
+
+animation-timing-function(ani)
+  -webkit-animation-timing-function: ani
+  -moz-animation-timing-function: ani
+  -ms-animation-timing-function: ani
+  -o-animation-timing-function: ani
+  animation-timing-function: ani
+
+transform(trans)  
+  -webkit-transform: trans
+  -ms-transform: trans
+  -moz-transform: trans
+  -o-transform: trans
+  transform: trans
+
+transform-origin(trans)
+  -webkit-transform-origin: trans
+  -ms-transform-origin: trans
+  -o-transform-origin: trans
+  -moz-transform-origin: trans
+  transform-origin: trans
+  
+transition(vals)
+  -webkit-transition: vals
+  -ms-transition: vals 
+  -o-transition: vals 
+  -moz-transition: vals 
+  transition: vals 
+  
+transition-property(vals)
+  -webkit-transition-property: vals
+  -ms-transition-property: vals 
+  -o-transition-property: vals 
+  -moz-transition-property: vals 
+  transition-property: vals 
+
+transition-duration(vals)
+  -webkit-transition-duration: vals
+  -ms-transition-duration: vals 
+  -o-transition-duration: vals 
+  -moz-transition-duration: vals 
+  transition-duration: vals 
+
+transition-timing-function(vals)
+  -webkit-transition-timing-function: vals
+  -ms-transition-timing-function: vals 
+  -o-transition-timing-function: vals 
+  -moz-transition-duration: vals 
+  transition-duration: vals
+
+filter(vals)
+  -webkit-filter: vals
+  -moz-filter: vals
+  -o-filter: vals
+  -ms-filter: vals
+  filter: vals
+
+user-select(vals)
+  -webkit-user-select: vals
+  -moz-user-select: vals
+  -o-user-select: vals
+  user-select: vals
+
+placeholder()
+  &::-webkit-input-placeholder
+      {block}
+  &:-moz-placeholder
+      {block}
+  &::-moz-placeholder
+      {block}
+  &:-ms-input-placeholder
+      {block}
+
+background-linear-gradient(startPoint, startColor, startInterval, endColor, endInterval, deprecatedWebkitStartPoint = false, deprecatedWebkitEndPoint = false)
+  background-color startColor
+  if deprecatedWebkitStartPoint && deprecatedWebkitEndPoint
+    background-image -webkit-gradient(linear, deprecatedWebkitStartPoint, deprecatedWebkitEndPoint, color-stop(startInterval, startColor), color-stop(endInterval, endColor))
+  background-image -webkit-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+  background-image -moz-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+  background-image -ms-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+  background-image -o-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+  background-image linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+
+flex-center()
+  justify-content: center
+  -webkit-justify-content: center
+  -webkit-align-items: center
+  alig-items: center
+
+display-flex()
+  display: flex
+  display: -webkit-flex
+  
+a-block()
+  display block
+  width 100%
+  height 100%
+
+cut-long-text()
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+appearance()
+   -webkit-appearance: none;
+   -moz-appearance:    none;
+   appearance:         none;
