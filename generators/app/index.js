@@ -287,7 +287,7 @@ contains: function(needle) {
   end: function() {
       this.log("bitti");
   },
-  /*install: function () {
+  install: function () {
     this.installDependencies();
-  }*/
+  }
 });
