@@ -1,7 +1,7 @@
 {
   "name": "generator-yaver",
-  "version": "0.0.0",
-  "description": "basitce stylus+jade stack'i ustune notify ve slack bildirimleri barındırır ve ssh deploy imkani sunar",
+  "version": "2.0.0",
+  "description": "usengeclere ozel hazirlanmistir.",
   "homepage": "",
   "author": {
     "name": "nusu alabuga",
