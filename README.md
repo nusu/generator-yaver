@@ -1,5 +1,21 @@
 # generator-yaver [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> basitce stylus+jade stack&#39;i ustune notify ve slack bildirimleri barındırır ve ssh deploy imkani sunar
+> mosquat ekibinin ihtiyaçlarını karşılamak üzere yazılmıştır.
+
+## Features
+Has ability to add libraries downthere in your new app:
+Js:
+- Select2
+- Owl Carousel 2
+- LightSlider
+- Dropzone
+
+Fonts:
+- Proxima Nova
+- Font Awesome
+
+Css (Stylus Based):
+- Bootstrap 3 (predefined)
+- Selected Fonts Css
 
 ## Installation
 
