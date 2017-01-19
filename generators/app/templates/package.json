@@ -17,6 +17,8 @@
         "gulp-stylus": "^2.6.0",
         "gulp-uglify": "^2.0.0",
         "gulp-watch": "^4.3.11",
+        "gulp-webp": "^2.3.0",
+        "gulp-defer": "^1.1.2",
         "pump": "^1.0.1"
     }
 }

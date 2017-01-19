@@ -1,11 +1,13 @@
 // include the required packages. 
-var gulp        = require('gulp');
-var stylus      = require('gulp-stylus');
-var uglify      = require('gulp-uglify');
-var concat      = require('gulp-concat');
-var rename      = require('gulp-rename');
-var browserSync = require('browser-sync').create();
-var imagemin    = require('gulp-imagemin');
+var gulp        = require('gulp'),
+    stylus      = require('gulp-stylus'),
+    uglify      = require('gulp-uglify'),
+    concat      = require('gulp-concat'),
+    rename      = require('gulp-rename'),
+    browserSync = require('browser-sync').create(),
+    imagemin    = require('gulp-imagemin'),
+    webp        = require('gulp-webp'),
+    defer       = require("gulp-defer");
  
 // Get one .styl file and render 
 gulp.task('stylus', function () {
@@ -20,7 +22,8 @@ gulp.task('stylus', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('uglify', function () {
+// javascript task
+gulp.task('js', function () {
     return gulp.src('./dev/js/*.js')
         .pipe(concat('main.js'))
         .pipe(uglify())
@@ -28,6 +31,21 @@ gulp.task('uglify', function () {
             suffix: '.min'
         }))
         .pipe(gulp.dest('./assets/js'))
+        .pipe(browserSync.stream());
+});
+
+// render blocking
+gulp.task('render', function() {
+  return gulp.src('./*.html')
+   .pipe(defer())
+   .pipe(gulp.dest(''));
+});
+
+// convert images to webp format
+gulp.task('webp', function () {
+    return gulp.src(['assets/img/*.png', 'assets/img/*.jpg', 'assets/img/*.jpeg', 'assets/img/*.gif'])
+        .pipe(webp())
+        .pipe(gulp.dest('./assets/img'));
 });
 
 // Static server
