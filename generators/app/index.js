@@ -290,22 +290,22 @@ contains: function(needle) {
 	  }
 
 	  if(this.selecttwo){
-		this.fs.copy(sourceRoot + '/libs/js/select2.js', devDir + '/js/select2.js');
+		this.fs.copy(sourceRoot + '/libs/js/select2.js', devDir + '/js/libs/select2.js');
 		this.fs.copy(sourceRoot + '/libs/css/select2.styl', devDir + '/stylus/libs/select2.styl'); 
 	  }
 
 	  if(this.owlcarousel){
-		this.fs.copy(sourceRoot + '/libs/js/owl-carousel.js', devDir + '/js/owl-carousel.js');
+		this.fs.copy(sourceRoot + '/libs/js/owl-carousel.js', devDir + '/js/libs/owl-carousel.js');
 		this.fs.copy(sourceRoot + '/libs/css/owl-carousel.styl', devDir + '/stylus/libs/owl-carousel.styl'); 
 	  }
 
 	  if(this.dropzone){
-		this.fs.copy(sourceRoot + '/libs/js/dropzone.js', devDir + '/js/dropzone.js');
+		this.fs.copy(sourceRoot + '/libs/js/dropzone.js', devDir + '/js/libs/dropzone.js');
 		this.fs.copy(sourceRoot + '/libs/css/dropzone.styl', devDir + '/stylus/libs/dropzone.styl'); 
 	  }
 	  
 	  if(this.lightslider){
-		this.fs.copy(sourceRoot + '/libs/js/lightslider.min.js', devDir + '/js/lightslider.min.js');
+		this.fs.copy(sourceRoot + '/libs/js/lightslider.min.js', devDir + '/js/libs/lightslider.min.js');
 		this.fs.copy(sourceRoot + '/libs/css/lightslider.styl', devDir + '/stylus/libs/lightslider.styl'); 
 	  }
 	  

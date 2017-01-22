@@ -1,21 +1,48 @@
 # generator-yaver [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> mosquat ekibinin ihtiyaçlarını karşılamak üzere yazılmıştır.
+> yaver is simplest way scaffolding and bootstrapping your stylus app.
 
-## Features
-Has ability to add libraries downthere in your new app:
-Js:
-- Select2
-- Owl Carousel 2
-- LightSlider
-- Dropzone
+## What is yaver?
+Yaver means aide in Turkish, I designed it based on my daily requirements
+
+## Filetree
+[![File Tree][file-tree]][file-tree]
+
+## Capabilities
+Yaver uses stylus as preprocessor, it comes with series of usefull mixins and style files of added jquery plugins.
+
+
+Gulp as task builder and it comes with these tasks:
+
+- stylus compile
+- js concat, uglify
+- convert images to webp format
+- compress images
+- browser-sync
+
+Jquery plugins you can add within cli:
+
+- [Select 2](https://github.com/select2/select2)
+- [Owl Carousel 2](https://github.com/OwlCarousel2/OwlCarousel2)
+- [Light Slider](https://github.com/sachinchoolur/lightslider)
+- [Dropzone](http://www.dropzonejs.com/)
+- [Viewport Units Buggyfill](https://github.com/rodneyrehm/viewport-units-buggyfill)
+- [Cookie.js](https://github.com/js-cookie/js-cookie)
+
 
 Fonts:
-- Proxima Nova
-- Font Awesome
 
-Css (Stylus Based):
+Yaver automatically imports selected fonts in stylus
+
+- Font Awesome
+- Proxima Nova
+- Montserrat
+- Avenir Next
+- Museo Sans
+
+
+Stylus:
+
 - Bootstrap 3 (predefined)
-- Selected Fonts Css
 
 ## Installation
 
@@ -44,6 +71,7 @@ yo yaver
 MIT © [nusu alabuga](github.com/nusu)
 
 
+[file-tree]: http://i65.tinypic.com/oh1ic2.png
 [npm-image]: https://badge.fury.io/js/generator-yaver.svg
 [npm-url]: https://npmjs.org/package/generator-yaver
 [travis-image]: https://travis-ci.org/nusu/generator-yaver.svg?branch=master

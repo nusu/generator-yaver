@@ -24,7 +24,7 @@ gulp.task('stylus', function () {
 
 // javascript task
 gulp.task('js', function () {
-    return gulp.src('./dev/js/*.js')
+    return gulp.src(['./dev/js/libs/*.js', './dev/js/*.js'])
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(rename({
@@ -56,7 +56,7 @@ gulp.task('browser-sync', function() {
         }
     });
     gulp.watch('dev/stylus/**/*', ['stylus']);
-    gulp.watch('dev/js/**/*', ['uglify']);
+    gulp.watch('dev/js/**/*', ['js']);
     gulp.watch(['*.html', 'assets/js/**/*']).on('change', browserSync.reload); // 'assets/**/*',
 });
 
@@ -65,15 +65,7 @@ gulp.task('browser-sync', function() {
 gulp.task('image', function(){
     gulp.src('img/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('img'))
-        .pipe(notify({
-            "title": "Resimler büyümüşte küçülmüş.",
-            "message": "boyutları küçültüldü efendim.",
-            "sound": "Frog", // case sensitive
-            "icon": path.join("../yaver/satir.png"), // case sensitive
-            "onLast": true,
-            "wait": false
-        }));
+        .pipe(gulp.dest('img'));
 });
 
 
