@@ -77,5 +77,5 @@ gulp.task('image', function(){
 });
 
 
-gulp.task('default', ['stylus', 'uglify', 'browser-sync']);
+gulp.task('default', ['stylus', 'js', 'browser-sync']);
  
