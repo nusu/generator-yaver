@@ -1,17 +1,29 @@
 # generator-yaver [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > yaver is simplest way scaffolding and bootstrapping your stylus app.
 
+## Installation
+
+First, install [Yeoman](http://yeoman.io) and generator-yaver using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+
+```bash
+npm install -g yo
+npm install -g generator-yaver
+```
+
+Then generate your new project:
+
+```bash
+yo yaver
+```
+
 ## What is yaver?
 Yaver means aide in Turkish, I designed it based on my daily requirements
 
-## Filetree
-[![File Tree][file-tree]][file-tree]
-
 ## Capabilities
-Yaver uses stylus as preprocessor, it comes with series of usefull mixins and style files of added jquery plugins.
+Yaver uses [Stylus](https://github.com/stylus/stylus/) as preprocessor, it comes with series of useful mixins and css files of chosen jquery plugins.
 
 
-Gulp as task builder and it comes with these tasks:
+uses [gulp](https://github.com/gulpjs/gulp) as task builder and it comes with these tasks:
 
 - stylus compile
 - js concat, uglify
@@ -42,29 +54,13 @@ Yaver automatically imports selected fonts in stylus
 
 Stylus:
 
-- Bootstrap 3 (predefined)
+- Bootstrap 3
 
-## Installation
+yaver uses [bootstrap 3 stylus](https://github.com/maxmx/bootstrap-stylus) as predefined css framework, it's modular so you can exclude unnecessary parts.
 
-First, install [Yeoman](http://yeoman.io) and generator-yaver using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
-```bash
-npm install -g yo
-npm install -g generator-yaver
-```
-
-Then generate your new project:
-
-```bash
-yo yaver
-```
-
-## Getting To Know Yeoman
-
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+## Filetree
+[![File Tree][file-tree]][file-tree]
 
 ## License
 

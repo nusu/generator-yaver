@@ -42,7 +42,6 @@ background-size(n)
 clearfix()
   +ie(7, true)
     zoom 1
-
   &:before
   &:after
     content ""
@@ -164,7 +163,7 @@ flex-center()
   justify-content: center
   -webkit-justify-content: center
   -webkit-align-items: center
-  alig-items: center
+  align-items: center
 
 display-flex()
   display: flex
@@ -180,7 +179,7 @@ cut-long-text()
   overflow: hidden;
   text-overflow: ellipsis;
 
-appearance()
-   -webkit-appearance: none;
-   -moz-appearance:    none;
-   appearance:         none;
+appearance(vals)
+   -webkit-appearance: vals;
+   -moz-appearance:    vals;
+   appearance:         vals;
