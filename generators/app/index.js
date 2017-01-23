@@ -37,9 +37,7 @@ contains: function(needle) {
 
   prompting: function () {
 	// Have Yeoman greet the user.
-	this.log(yosay(
-	  chalk.red('Yaver') + ' saygılarını sunar!'
-	));
+	
 
 	var prompts = [
 		{
@@ -132,12 +130,6 @@ contains: function(needle) {
 					checked: false
 				}
 			]
-		},
-		{
-			name: 'deploy',
-			type: 'confirm',
-			message: 'Uygulama sizin için otomatik deploy edilsin mi?',
-			default: false
 		}
 	];
 
@@ -146,49 +138,6 @@ contains: function(needle) {
 	  this.props = props;
 
 	}.bind(this));
-  },
-  _deploying: function(){
-	  // continue to process
-	  // server hakkındaki sorular
-	  if(this.props.deploy){
-		  var done = this.async();
-		  var sshSorulari = [
-			  {
-				  name: 'serverIp',
-				  message: 'ip veya domain',
-				  default: '108.174.149.249'
-			  },
-			  {
-				  name: 'serverUsername',
-				  message: 'username',
-				  default: 'root'
-			  },
-			  {
-				  name: 'serverPassword',
-				  message: 'password',
-				  default: '****'
-			  },
-			  {
-				  name: 'serverPort',
-				  message: 'port',
-				  default: '22'
-			  },
-			  {
-				  name: 'serverKey',
-				  message: 'ssh-dsa Private key konumu',
-				  default: '/Users/nusu/.ssh/id_dsa'
-			  },
-			  {
-				  name: 'serverPublicKey',
-				  message: 'ssh-dsa Public key konumu',
-				  default: '/Users/nusu/.ssh/id_dsa.pub'
-			  }
-		  ];
-		  return this.prompt(sshSorulari).then(function( props ){
-			  this.serverInf = props;
-			  done();
-		  }.bind(this));
-	  }
   },
   _fileSystem: function(){
 	  var destRoot    = this.destinationRoot(),
@@ -207,27 +156,13 @@ contains: function(needle) {
 	  mkdirp(asDir  + '/fonts');
 	  mkdirp(asDir  + '/img');
 	  mkdirp(asDir  + '/js');
-	  
-	  // deploy file
-	 if(this.props.deploy){
-		var createConfig = {
-			"ip": this.serverInf.serverIp,
-			"username": this.serverInf.serverUsername,
-			"password": this.serverInf.serverPassword,
-			"port": this.serverInf.serverPort,
-			"privateKey": this.serverInf.serverKey,
-			"publicKey": this.serverInf.serverPublicKey
-		};
-		this.fs.writeJSON(destRoot + '/config.json', createConfig);
-	  }
-	  // -- deploy end
 
 	  // bower file
 	  var bowerJson = {
 		  name: "nusu",
 		  private: true,
 		  version: "1.0.0",
-		  authors: "Nusu Alabuğa - nusususuzu@gmail.com",
+		  authors: "Generator Yaver - nusususuzu@gmail.com",
 		  license: "MIT",
 		  dependencies: {}
 	  };
@@ -242,7 +177,6 @@ contains: function(needle) {
 	  this.fs.copyTpl(sourceRoot + '/index.html', destRoot + '/index.html', packagejason);
 	  this.fs.copyTpl(sourceRoot + '/package.json', destRoot + '/package.json', packagejason);
 	  this.fs.copy(sourceRoot + '/gulpfile.js', destRoot + '/gulpfile.js');
-	  //this.fs.copy(sourceRoot + '/libs/yaver/*', devDir + '/yaver/');
 
 	  // stylus files
 	  this.fs.copy(sourceRoot + '/libs/stylus/*', devDir + '/stylus/');
@@ -323,14 +257,13 @@ contains: function(needle) {
   initializing: function(){
   },
   configuring: function(){
-	this._deploying();
 	this.config.save();
   },
   writing: function(){
 	this._fileSystem();
   },
   end: function() {
-	  this.log("bitti");
+	  this.log("and there you go! one step away from development just type \n gulp ");
   },
   install: function () {
 	this.installDependencies();
