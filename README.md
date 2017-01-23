@@ -16,6 +16,12 @@ Then generate your new project:
 yo yaver
 ```
 
+After yaver you can simply run:
+
+```bash
+gulp
+```
+
 ## What is yaver?
 Yaver means aide in Turkish, I designed it based on my daily requirements
 
