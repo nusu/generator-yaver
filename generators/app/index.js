@@ -37,63 +37,55 @@ contains: function(needle) {
 
   prompting: function () {
 	// Have Yeoman greet the user.
-	
+this.log('\n');
+this.log('         .-"-.     ');
+this.log('       _/.-.-.\\_   ');
+this.log('      ( ( o o ) )  ');
+this.log('       |/  "  \\|   ');
+this.log('        \\ .-. /    ');
+this.log('        /`"""`\\    ');
+this.log('       /       \\   ');
+this.log('         Yaver! \n \n');
+
 
 	var prompts = [
 		{
 			name: 'appName',
-			message: 'Uygulamanın adı nedir?',
-			default: 'projeAdi'
-		},
-		{
-			name: 'cssMid',
-			type: 'checkbox',
-			message: 'Stylus mu Sass mı ?',
-			choices: [
-				{
-					name: 'stylus',
-					value: 'stylus',
-					checked: true
-				},
-				{
-					name: 'sass',
-					value: 'sass',
-					checked: false,
-				}
-			]
+			message: 'Project Name',
+			default: 'my-sample-project'
 		},
 		{
 			name : 'plugins',
 			type: 'checkbox',
-			message: 'Hangi jquery pluginleri eklensin?',
+			message: 'Which jquery plugins you want to use ?',
 			choices: [
 				{
-					name: 'owlcarousel',
+					name: 'Owl Carousel 2',
 					value: 'owlcarousel',
 					checked: false
 				},
 				{
-					name: 'select2',
+					name: 'Select2',
 					value: 'select2',
 					checked: false
 				},
 				{
-					name: 'lightslider',
+					name: 'LightSlider',
 					value: 'lightslider',
 					checked: false
 				},
 				{
-					name: 'dropzone',
+					name: 'Dropzone',
 					value: 'dropzone',
 					checked: false
 				},
 				{
-					name:'viewportfixer',
+					name:'Viewport buggyfill',
 					value: 'viewportfixer',
 					checked: false
 				},
 				{
-					name: 'cookie',
+					name: 'Cookie.js',
 					value: 'cookie',
 					checked: false
 				}
@@ -102,30 +94,30 @@ contains: function(needle) {
 		{
 			name: 'fonts',
 			type: 'checkbox',
-			message: 'Hangi fontlar eklensin?',
+			message: 'Which fonts you need ?',
 			choices: [
 				{
-					name: 'fontawesome',
+					name: 'Font Awesome',
 					value: 'fontawesome',
 					checked: false
 				},
 				{
-					name: 'proximanova',
+					name: 'Proxima Nova',
 					value: 'proximanova',
 					checked: false
 				},
 				{
-					name: 'montserrat',
+					name: 'Montserrat',
 					value: 'montserrat',
 					checked: false
 				},
 				{
-					name: 'avenirnext',
+					name: 'Avenir Next',
 					value: 'avenirnext',
 					checked: false
 				},
 				{
-					name: 'museosans',
+					name: 'Museo Sans',
 					value: 'museosans',
 					checked: false
 				}
@@ -145,9 +137,7 @@ contains: function(needle) {
 		  asDir       = destRoot + '/assets',
 		  sourceRoot  = this.sourceRoot();
 
-	  mkdirp(devDir + '/' + this.props.cssMid[0]);
 	  mkdirp(devDir + '/js');
-	  //mkdirp(devDir + '/yaver');
 	  mkdirp(devDir + '/stylus');
 	  mkdirp(devDir + '/stylus/elements');
 	  mkdirp(devDir + '/stylus/pages');
@@ -250,7 +240,7 @@ contains: function(needle) {
 	  }
 	  
 	  if(this.cookie){
-		this.fs.copy(sourceRoot + '/libs/js/cookie.js', devDir + '/js/cookie.js');
+		this.fs.copy(sourceRoot + '/libs/js/cookie.js', devDir + '/js/libs/cookie.js');
 	  }
 
   },

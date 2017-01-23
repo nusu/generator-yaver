@@ -1,5 +1,5 @@
 # generator-yaver [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> yaver is simplest way scaffolding and bootstrapping your stylus app.
+> yaver is simplest way to scaffold and bootstrap your stylus app.
 
 ## Installation
 
@@ -33,8 +33,8 @@ Yaver uses [Stylus](https://github.com/stylus/stylus/) as preprocessor, it comes
 
 uses [gulp](https://github.com/gulpjs/gulp) as task builder and it comes with these tasks:
 
-- stylus compile
-- js concat, uglify
+- compile stylus files
+- concat, uglify javascript files
 - convert images to webp format
 - compress images
 - browser-sync
@@ -72,7 +72,7 @@ yaver uses [bootstrap 3 stylus](https://github.com/maxmx/bootstrap-stylus) as pr
 
 ## License
 
-MIT © [nusu alabuga](github.com/nusu)
+MIT © [nusu alabuga](https://github.com/nusu)
 
 
 [file-tree]: http://i65.tinypic.com/oh1ic2.png
