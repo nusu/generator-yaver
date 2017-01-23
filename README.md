@@ -22,6 +22,8 @@ After yaver you can simply run:
 gulp
 ```
 
+And you're ready to develop your new app!
+
 ## What is yaver?
 Yaver means aide in Turkish, I designed it based on my daily requirements
 
