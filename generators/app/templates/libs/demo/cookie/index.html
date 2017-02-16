@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cookie Demo</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+</head>
+<style>
+	body{
+		background: #673AB7;
+		font-family: "Montserrat";
+		color: #fff;
+		padding: 10px;
+		margin: 0;
+	}
+
+	.flex{
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		align-self: center;
+		width: 100vw;
+		height: 800px;
+	}
+	.navigator, .navigation{
+		/*margin-top: 40px;*/
+		text-align: center;
+		width: 100%;
+	}
+	.prev,.next{
+		display: inline-block;
+		padding: 10px 40px;
+		font-size: 22px;
+		text-align: center;
+		border: 1px solid #fff;
+		cursor: pointer;
+		border-radius: 30px;
+		transition: 500ms all;
+		margin: 5px 20px;
+	}
+
+	.status{
+		display: flex;
+		align-items: center;
+		align-self: center;
+		width: 500px;
+		height: 500px;
+		background: linear-gradient(45deg, #880E4F 0%,#FFD54F 100%);
+		border-radius: 40px;
+	}
+
+	h1{
+		font-size: 48px;
+		border-bottom:3px solid rgba(255,255,255,.8);
+	}
+	p{
+		font-size: 36px;
+		padding-bottom: 10px;
+		text-align: center;
+	}
+
+	.prev:hover,
+	.next:hover{
+		background:#fff; 
+		color: #000;
+	}
+</style>
+<body>
+
+	<h1>Yaver Demo - Cookie.js</h1>
+
+	<div class="flex">
+		<div class="status">
+			<div class="navigator">
+				<p class="initCookie"></p>
+				<div class="prev">Set Cookie</div>
+				<div class="next">Unset Cookie</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
+	<!-- <script src="../../js/cookie.js"></script>-->
+	<script src="../../dev/js/libs/cookie.js"></script>
+	<script>
+		$(function(){
+			//
+		    // initialize
+		    //
+
+		    // * IMPORTANT NOTE *
+		    // SOME OF BROWSERS LIKE CHROME DOES NOT ALLOW TO
+		    // SET COOKIE IN THE FILE://
+		    // SO IF YOU SET THE COOKIE ON LOCAL AND DOESN'T APPEAR
+		    // USE YAVER'S SERVER (HTTP://LOCALHOST:3000)
+
+		    //
+		    // detailed documention
+		    // https://github.com/js-cookie/js-cookie
+		    //
+
+		    $(".prev").on("click", function(){
+
+		    	// cookie uses day based expire
+		    	// for example:
+		    	// expires: 1 => 1 day
+		    	// so if you want to set a cookie which expires less than a day
+
+		    	// 1 hour coookie
+		    	// 24 => hour in a day
+		    	// expires: 1/24 // 1 day
+
+		    	// 30 minute cookie
+		    	// 24 => hour in a day
+		    	// 24 * 2 = 42
+		    	// 1/42
+		    	// expires: 1/42 // 30 minute
+
+		    	// 15 minute cookie
+		    	// ^
+		    	// 24 * 3 = 72
+		    	// 1/72
+		    	// expires: 1/72 // 15 minute
+
+		    	Cookies.set('foo', 'bar', {
+					expires: 1/72
+				});
+
+				checkCookie();
+		    });
+
+		    $(".next").on("click", function(){
+
+		    	Cookies.remove('foo');
+
+		    	checkCookie();
+
+		    });
+
+
+		    function checkCookie(){
+
+		    	var status = Cookies.get('foo') != "bar" ? "Cookie Expired" : "There's Cookie!";
+		    	$(".initCookie").text(status);
+
+		    	// console.log(Cookies.get('foo'));
+			   
+			    // if(Cookies.get('foo') != "bar"){
+				   //  $(".initCookie").text("Cookie Expired");
+			    // }else{
+			    // 	$(".initCookie").text("Cookie h")
+			    // }
+			}
+
+			checkCookie();
+		
+
+		});
+
+
+
+	</script>
+</body>
+</html>

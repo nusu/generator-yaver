@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Owl Carousel Demo</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="owl-demo.css">
+</head>
+<style>
+	body{
+		padding: 15px;
+		background: #673AB7;
+		font-family: "Montserrat";
+		color: #fff;
+	}
+	.item{
+		width:500px;
+		height: 500px;
+		margin: 0 auto}
+	.navigator, .navigation{
+		margin-top: 40px;
+		text-align: center;
+	}
+	.prev,.next{
+		display: inline-block;
+		padding: 10px 40px;
+		font-size: 22px;
+		text-align: center;
+		border: 1px solid #fff;
+		cursor: pointer;
+		border-radius: 30px;
+		transition: 500ms all;
+		margin: 0 20px;
+	}
+
+	h1{
+		font-size: 48px;
+		border-bottom:3px solid rgba(255,255,255,.8);
+	}
+	p{
+		cursor: pointer;
+		text-align: center;
+		display: inline-block;
+		width: 45px;
+		height: 45px;
+		border-radius: 100%;
+		line-height: 45px;
+		transition: 500ms all;
+		border: 1px solid #fff;
+		margin: 0 10px;
+	}
+	p:hover,
+	.prev:hover,
+	.next:hover,
+	p.active{
+		background:#fff; 
+		color: #000;
+	}
+</style>
+<body>
+
+	<h1>Yaver Demo - Owl Carousel 2</h1>
+	
+	<div class="owl-carousel">
+		<div class="item"><img src="http://placehold.it/500x500" alt=""></div>
+		<div class="item"><img src="http://placehold.it/500x500" alt=""></div>
+		<div class="item"><img src="http://placehold.it/500x500" alt=""></div>
+		<div class="item"><img src="http://placehold.it/500x500" alt=""></div>
+		<div class="item"><img src="http://placehold.it/500x500" alt=""></div>
+	</div>
+
+
+	<div class="navigator">
+		<p class="active">1</p>
+		<p>2</p>
+		<p>3</p>
+		<p>4</p>
+		<p>5</p>
+	</div>
+
+	<div class="navigation">
+		<div class="prev">previous</div>
+		<div class="next">next</div>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
+	<script src="../../dev/js/libs/owl-carousel.js"></script>
+	<script>
+
+		//
+		// initialize
+		//
+
+		var mainSlider = $('.owl-carousel').owlCarousel({
+		    items:1,
+		    loop:false,
+		    dots: true,
+		    margin: 0,
+		    responsive:{
+		        0:{
+		            items:1
+		        },
+		        600:{
+		            items:1
+		        },
+		        1000:{
+		            items:1
+		        }
+		    }
+
+		});
+
+		//
+		// navigate by index
+		//
+
+		$(".navigator p").click(function(){
+
+			var index = $(this).index();
+
+			mainSlider.trigger('to.owl.carousel', index);
+
+		});
+
+
+		//
+		// navigate by prev & nex buttons
+		//
+
+		$('.next').click(function() {
+			mainSlider.trigger('next.owl.carousel');
+		});
+
+		$('.prev').click(function() {
+		    mainSlider.trigger('prev.owl.carousel');
+		});
+
+
+
+
+
+
+
+		//
+		// demo purposes
+		//
+
+		mainSlider.on('changed.owl.carousel', function(event) {
+			$(".navigator p").removeClass("active");
+		    $(".navigator p").eq(event.item.index).addClass("active");
+		})
+
+	</script>
+</body>
+</html>

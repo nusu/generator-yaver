@@ -1,0 +1,167 @@
+.animated [class*="ae-"] {
+  -webkit-backface-visibility:hidden;
+  -webkit-transform:translate3d(0,0,0);
+  -moz-transform:translate3d(0,0,0);
+  -ms-transform:translate3d(0,0,0);
+  -o-transform:translate3d(0,0,0);
+  transform:translate3d(0,0,0);
+}
+
+/* Speed */
+.animated.fast .animate [class*="ae-"]:not(.done) {
+  -webkit-transition-duration:0.6s;
+  transition-duration:0.6s;
+}
+
+.animated .animate [class*="ae-"]:not(.done) {
+  -webkit-transition-duration:0.8s;
+  transition-duration:0.8s;
+}
+
+.animated.slow .animate [class*="ae-"]:not(.done) {
+  -webkit-transition-duration:1s;
+  transition-duration:1s;
+}
+
+/* delays */
+.animated.fast .animate .ae-1:not(.done)  { -webkit-transition-delay:   10ms; transition-delay: 10ms; }
+.animated.fast  .animate .ae-2:not(.done)   { -webkit-transition-delay:   140ms; transition-delay:  140ms; }
+.animated.fast  .animate .ae-3:not(.done)   { -webkit-transition-delay:   270ms; transition-delay:  270ms; }
+.animated.fast  .animate .ae-4:not(.done)   { -webkit-transition-delay:   400ms; transition-delay:  400ms; }
+.animated.fast  .animate .ae-5:not(.done)   { -webkit-transition-delay:   530ms; transition-delay:  530ms; }
+.animated.fast  .animate .ae-6:not(.done)   { -webkit-transition-delay:   660ms; transition-delay:  660ms; }
+.animated.fast  .animate .ae-7:not(.done)   { -webkit-transition-delay:   790ms; transition-delay:  790ms; }
+.animated.fast  .animate .ae-8:not(.done)   { -webkit-transition-delay:   920ms; transition-delay:  920ms; }
+.animated.fast  .animate .ae-9:not(.done)   { -webkit-transition-delay:   1050ms; transition-delay: 1050ms; }
+.animated.fast  .animate .ae-10:not(.done) { -webkit-transition-delay:  1180ms; transition-delay: 1180ms; }
+
+.animated .animate .ae-1:not(.done)   { -webkit-transition-delay: 10ms; transition-delay: 10ms; }
+.animated .animate .ae-2:not(.done)   { -webkit-transition-delay: 160ms; transition-delay:  160ms; }
+.animated .animate .ae-3:not(.done)   { -webkit-transition-delay: 320ms; transition-delay:  320ms; }
+.animated .animate .ae-4:not(.done)   { -webkit-transition-delay: 480ms; transition-delay:  480ms; }
+.animated .animate .ae-5:not(.done)   { -webkit-transition-delay: 640ms; transition-delay:  640ms; }
+.animated .animate .ae-6:not(.done)   { -webkit-transition-delay: 800ms; transition-delay:  800ms; }
+.animated .animate .ae-7:not(.done)   { -webkit-transition-delay: 960ms; transition-delay:  960ms; }
+.animated .animate .ae-8:not(.done)   { -webkit-transition-delay: 1120ms; transition-delay: 1120ms; }
+.animated .animate .ae-9:not(.done)   { -webkit-transition-delay: 1280ms; transition-delay: 1280ms; }
+.animated .animate .ae-10:not(.done) { -webkit-transition-delay:  1440ms; transition-delay: 1440ms; }
+
+.animated.slow  .animate .ae-1:not(.done)   { -webkit-transition-delay: 10ms; transition-delay: 10ms; }
+.animated.slow  .animate .ae-2:not(.done)   { -webkit-transition-delay: 210ms; transition-delay:  210ms; }
+.animated.slow  .animate .ae-3:not(.done)   { -webkit-transition-delay: 420ms; transition-delay:  420ms; }
+.animated.slow  .animate .ae-4:not(.done)   { -webkit-transition-delay: 630ms; transition-delay:  630ms; }
+.animated.slow  .animate .ae-5:not(.done)   { -webkit-transition-delay: 840ms; transition-delay:  840ms; }
+.animated.slow  .animate .ae-6:not(.done)   { -webkit-transition-delay: 1050ms; transition-delay: 1050ms; }
+.animated.slow  .animate .ae-7:not(.done)   { -webkit-transition-delay: 1260ms; transition-delay: 1260ms; }
+.animated.slow  .animate .ae-8:not(.done)   { -webkit-transition-delay: 1470ms; transition-delay: 1470ms; }
+.animated.slow  .animate .ae-9:not(.done)   { -webkit-transition-delay: 1680ms; transition-delay: 1680ms; }
+.animated.slow  .animate .ae-10:not(.done) { -webkit-transition-delay:  1890ms; transition-delay: 1890ms; }
+
+
+/* Directions */
+.animated [class*="ae-"]:not(.done), /* default */
+.animated .fromBottom [class*="ae-"]:not(.done),
+.animated.fromBottom [class*="ae-"]:not(.done),
+.slides.animated [class*="ae-"].fromBottom:not(.done) {
+   visibility:hidden;
+   -webkit-transform:translate3d(0,100px,0);
+   transform:translate3d(0,100px,0);
+   opacity:0;
+}
+
+.animated .fromTop [class*="ae-"]:not(.done),
+.animated.fromTop [class*="ae-"]:not(.done),
+.slides.animated [class*="ae-"].fromTop:not(.done) {
+   -webkit-transform:translate3d(0,-100px,0);
+   transform:translate3d(0,-100px,0);
+}
+
+.animated .fromLeft [class*="ae-"]:not(.done),
+.animated.fromLeft [class*="ae-"]:not(.done),
+.slides.animated [class*="ae-"].fromLeft:not(.done) {
+   -webkit-transform:translate3d(-50px,0,0);
+   transform:translate3d(-50px,0,0);
+}
+
+.animated .fromRight [class*="ae-"]:not(.done),
+.animated.fromRight [class*="ae-"]:not(.done),
+.slides.animated [class*="ae-"].fromRight:not(.done) {
+   -webkit-transform:translate3d(50px,0,0);
+   transform:translate3d(50px,0,0);
+}
+
+.animated .fromCenter [class*="ae-"]:not(.done),
+.animated.fromCenter [class*="ae-"]:not(.done),
+.slides.animated [class*="ae-"].fromCenter:not(.done) {
+   -webkit-transform:scale(0.8) translate3d(0,0,0);
+   transform:scale(0.8) translate3d(0,0,0);
+}
+
+.animated .fromAbove [class*="ae-"]:not(.done),
+.animated.fromAbove [class*="ae-"]:not(.done),
+.slides.animated [class*="ae-"].fromAbove:not(.done) {
+   -webkit-transform:scale(1.2) translate3d(0,0,0);
+   transform:scale(1.2) translate3d(0,0,0);
+}
+
+.animated .fromBottomLeft [class*="ae-"]:not(.done),
+.animated.fromBottomLeft [class*="ae-"]:not(.done),
+.slides.animated [class*="ae-"].fromBottomLeft:not(.done) {
+   -webkit-transform:translate3d(-100px,100px,0);
+   transform:translate3d(-100px,100px,0);
+}
+
+.animated .fromTopLeft [class*="ae-"]:not(.done),
+.animated.fromTopLeft [class*="ae-"]:not(.done),
+.slides.animated [class*="ae-"].fromTopLeft:not(.done) {
+   -webkit-transform:translate3d(-100px,-100px,0);
+   transform:translate3d(-100px,-100px,0);
+}
+
+.animated .fromBottomRight [class*="ae-"]:not(.done),
+.animated.fromBottomRight [class*="ae-"]:not(.done),
+.slides.animated [class*="ae-"].fromBottomRight:not(.done) {
+   -webkit-transform:translate3d(100px,100px,0);
+   transform:translate3d(100px,100px,0);
+}
+
+.animated .fromTopRight [class*="ae-"]:not(.done),
+.animated.fromTopRight [class*="ae-"]:not(.done),
+.slides.animated [class*="ae-"].fromTopRight:not(.done) {
+   -webkit-transform:translate3d(100px,-100px,0);
+   transform:translate3d(100px,-100px,0);
+}
+
+.animated .fadeIn [class*="ae-"]:not(.done),
+.animated.fadeIn [class*="ae-"]:not(.done),
+.slides.animated [class*="ae-"].fadeIn:not(.done) {
+   -webkit-transform:scale(1) translate3d(0,0,0);
+   transform:scale(1) translate3d(0,0,0);
+}
+
+.animated .fromBlur [class*="ae-"]:not(.done),
+.animated.fromBlur [class*="ae-"]:not(.done),
+.animated [class*="ae-"].fromBlur:not(.done) {
+   -webkit-transform:scale(1) translate3d(0,0,0);
+   transform:scale(1) translate3d(0,0,0);
+   filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="10" /></filter></svg>#filter');
+   -webkit-filter: blur(10px);
+   filter: blur(10px);
+}
+
+
+
+/* Final Step */
+.animated .animate.active [class*="ae-"]:not(.done) {
+  opacity:1;
+  -webkit-backface-visibility:hidden;
+  visibility:visible;
+  -webkit-transform:translate3d(0,0,0);
+  -moz-transform:translate3d(0,0,0);
+  -ms-transform:translate3d(0,0,0);
+  -o-transform:translate3d(0,0,0);
+  transform:translate3d(0,0,0);
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
+  -webkit-filter: none;
+  filter: none;
+}

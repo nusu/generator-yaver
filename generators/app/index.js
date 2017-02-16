@@ -36,7 +36,7 @@ contains: function(needle) {
 
 
   prompting: function () {
-	// Have Yeoman greet the user.
+	// Have Yaver greet the user.
 this.log('\n');
 this.log('         .-"-.     ');
 this.log('       _/.-.-.\\_   ');
@@ -146,6 +146,7 @@ this.log('         Yaver! \n \n');
 	  mkdirp(asDir  + '/fonts');
 	  mkdirp(asDir  + '/img');
 	  mkdirp(asDir  + '/js');
+	  mkdirp(destRoot + "/demo");
 
 	  // bower file
 	  var bowerJson = {
@@ -220,7 +221,15 @@ this.log('         Yaver! \n \n');
 
 	  if(this.owlcarousel){
 		this.fs.copy(sourceRoot + '/libs/js/owl-carousel.js', devDir + '/js/libs/owl-carousel.js');
-		this.fs.copy(sourceRoot + '/libs/css/owl-carousel.styl', devDir + '/stylus/libs/owl-carousel.styl'); 
+		this.fs.copy(sourceRoot + '/libs/css/owl-carousel.styl', devDir + '/stylus/libs/owl-carousel.styl');
+
+		//
+		// demo assets
+		//
+
+		var owlRoot = destRoot + "/demo/owl-carousel/";
+		mkdirp(owlRoot);
+		this.fs.copy(sourceRoot + '/libs/demo/owl-carousel/*', owlRoot); 
 	  }
 
 	  if(this.dropzone){
@@ -237,10 +246,27 @@ this.log('         Yaver! \n \n');
 		this.fs.copy(sourceRoot + '/libs/js/viewport-units-buggyfill.js', devDir + '/js/libs/viewport-units-buggyfill.js');
 		this.fs.copy(sourceRoot + '/libs/js/viewport-units-buggyfill.hacks.js', devDir + '/js/libs/viewport-units-buggyfill.hacks.js');
 		this.fs.copy(sourceRoot + '/libs/css/viewport.styl', devDir + '/stylus/libs/viewport.styl'); 
+
+		//
+		// demo assets
+		//
+
+		var fixerRoot = destRoot + "/demo/viewport-buggyfill/";
+		mkdirp(fixerRoot);
+		this.fs.copy(sourceRoot + '/libs/demo/viewport-buggyfill/*', fixerRoot); 
+
 	  }
 	  
 	  if(this.cookie){
 		this.fs.copy(sourceRoot + '/libs/js/cookie.js', devDir + '/js/libs/cookie.js');
+
+		//
+		// demo assets
+		//
+
+		var cookieRoot = destRoot + "/demo/cookie/";
+		mkdirp(cookieRoot);
+		this.fs.copy(sourceRoot + '/libs/demo/cookie/*', cookieRoot); 
 	  }
 
   },

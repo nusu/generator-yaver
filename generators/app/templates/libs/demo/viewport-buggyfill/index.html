@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Viewport Buggyfill Demo</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+</head>
+<style>
+	body{
+		padding:0;
+		margin:0;
+	}
+	.cover{
+		width: 100vw;
+		height: 100vh;
+		background: linear-gradient(45deg, #7e57c2 0%,#7db9e8 100%);
+		
+
+		/*
+		 * hack
+		 */
+		content: 'viewport-units-buggyfill; width: 100vw; height: 100vh;';
+	}
+	.shitty{
+		background: #66BB6A;
+		font-family: "Montserrat";
+		color: #fff;
+		text-align: center;
+		font-size: 22px;
+		font-weight: 700;
+	}
+	.shitty p{
+		padding: 5px 0;
+		margin: 10px 0;
+	}
+</style>
+<body>
+
+	
+	<div class="cover"></div>
+
+	<div class="shitty">
+		<p>sample shitpost 1</p>
+		<p>sample shitpost 2</p>
+		<p>sample shitpost 3</p>
+		<p>sample shitpost 4</p>
+		<p>sample shitpost 5</p>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
+	<script src="../../dev/js/libs/viewport-units-buggyfill.js"></script>
+	<script src="../../dev/js/libs/viewport-units-buggyfill.hacks.js"></script>
+	<script>
+
+		//
+	    // initialize
+	    // * IMPORTANT NOTE *
+	    // THIS LIBRARY REQUIRES SOME CSS PROPERTIES INSIDE CSS
+	    // LOOK AT LINE 22 ^
+	    //
+
+	    //
+	    // detailed documention
+	    // https://github.com/rodneyrehm/viewport-units-buggyfill
+	    //
+
+	    window.viewportUnitsBuggyfill.init({
+			refreshDebounceWait: 50,
+			hacks: window.viewportUnitsBuggyfillHacks
+		});
+
+	</script>
+</body>
+</html>
