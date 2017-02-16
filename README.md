@@ -73,7 +73,7 @@ yaver uses [bootstrap 3 stylus](https://github.com/maxmx/bootstrap-stylus) as pr
 ## Changelog
 ---
 
-### 2.1.6
+### 2.1.0
 
 - now yaver creates nice looking demo assets for js plugins, only owl carousel 2, cookie.js and viewport-buggyfills are supported for now
 - animation library add ( documentation soon )
