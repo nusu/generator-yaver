@@ -1,3 +1,62 @@
+for i in range(0,70,5)
+	.padding-top-{i}
+		padding-top s('%spx', i) !important 
+	.padding-right-{i}
+		padding-right s('%spx', i) !important
+	.padding-bottom-{i}
+		padding-bottom s('%spx', i) !important
+	.padding-left-{i}
+		padding-left s('%spx', i) !important
+	.padding-{i}
+		padding s('%spx', i) !important
+	.margin-top-{i}
+		margin-top s('%spx', i) !important 
+	.margin-right-{i}
+		margin-right s('%spx', i) !important
+	.margin-bottom-{i}
+		margin-bottom s('%spx', i) !important
+	.margin-left-{i}
+		margin-left s('%spx', i) !important
+	.margin-{i}
+		margin s('%spx', i) !important
+
+.margin-top-30-xs
+	margin-top 30px
+	+bp(medium)
+		margin-top initial
+
+.margin-top-15-xs
+	margin-top 15px
+	+bp(medium)
+		margin-top initial
+
+.sm-padding-xs
+	padding-right 5px
+	padding-left 5px
+	+bp(medium)
+		padding-right 15px
+		padding-left 15px
+
+.no-padding-xs
+	padding-right 0
+	padding-left 0
+	+bp(medium)
+		padding-right 15px
+		padding-left 15px
+
+.no-right-padding-xs
+	padding-right 0
+	+bp(medium)
+		padding-right 15px
+
+.no-left-padding-md
+	+bp(medium)
+		padding-left 0
+
+.no-right-padding-md
+	+bp(medium)
+		padding-right 0
+
 .no-padding
 	padding 0
 
@@ -6,6 +65,9 @@
 
 .no-left-padding
 	padding-left 0
+
+.no-padding-bottom
+	padding-bottom 0 !important
 
 .sm-margin
 	margin-top 28px
@@ -90,3 +152,32 @@
 
 .gauze
 	opacity .5
+
+.display-block
+	display block
+
+.display-inline-block
+	display inline-block
+
+.center-on-mobile
+	text-align center
+	+bp(medium)
+		text-align initial
+
+.v-align
+	+bp(medium)
+		display flex
+		align-items center
+		justify-content center
+		flex-direction row
+
+.align-icon
+	span
+		vertical-align middle
+
+.mobile-con
+	padding-right 0
+	padding-left 0
+	+bp(tablet)
+		padding-right 15px
+		padding-left 15px

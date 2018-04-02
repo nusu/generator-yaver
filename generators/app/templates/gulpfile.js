@@ -7,7 +7,8 @@ var gulp        = require('gulp'),
     browserSync = require('browser-sync').create(),
     imagemin    = require('gulp-imagemin'),
     webp        = require('gulp-webp'),
-    defer       = require("gulp-defer");
+    defer       = require("gulp-defer"),
+    babel       = require('gulp-babel');
  
 // Get one .styl file and render 
 gulp.task('stylus', function () {
@@ -26,7 +27,8 @@ gulp.task('stylus', function () {
 gulp.task('js', function () {
     return gulp.src(['./dev/js/libs/*.js', './dev/js/*.js'])
         .pipe(concat('main.js'))
-        .pipe(uglify())
+        .pipe(babel())
+        // .pipe(uglify())
         .pipe(rename({
             suffix: '.min'
         }))
@@ -48,7 +50,7 @@ gulp.task('webp', function () {
         .pipe(gulp.dest('./assets/img'));
 });
 
-// Static server
+// static server
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
@@ -58,6 +60,17 @@ gulp.task('browser-sync', function() {
     gulp.watch('dev/stylus/**/*', ['stylus']);
     gulp.watch('dev/js/**/*', ['js']);
     gulp.watch(['*.html', 'assets/js/**/*']).on('change', browserSync.reload); // 'assets/**/*',
+});
+
+// for processwire
+gulp.task('processwire', function() {
+    browserSync.init({
+        proxy: "http://localhost:8888/"
+    });
+
+    gulp.watch('dev/stylus/**/*', ['stylus']);
+    gulp.watch('dev/js/**/*', ['js']);
+    gulp.watch(['*.html', 'parts/layout/*.twig', '*.twig', 'assets/js/**/*']).on('change', browserSync.reload); // 'assets/**/*',
 });
 
 // Image task
@@ -70,4 +83,5 @@ gulp.task('image', function(){
 
 
 gulp.task('default', ['stylus', 'js', 'browser-sync']);
+// gulp.task('default', ['stylus', 'js', 'processwire']);
  

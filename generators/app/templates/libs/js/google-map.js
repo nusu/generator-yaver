@@ -1,3 +1,24 @@
+//
+// Nusu Alabuğa - 2017
+// Google Map
+//
+// github.com/nusu
+//
+//
+
+//
+// SAMPLE USAGE
+//
+// 1- Save your marker pin to assets/img/ as pin.png
+//
+// 2- Put your coordinates into #map seperate with comma
+//
+// <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAUnkZHujWyvnOPCWbvCpdk4_2A7ObmymE&sensor=false"></script>
+// <div class="map" id="map">
+//     39.854534, 32.646819,16
+// </div>
+//
+
 $(function () {
     loadMap();
 });

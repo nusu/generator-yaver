@@ -1,0 +1,67 @@
+// [class*='section-']
+// 	display inline-block
+// 	position relative
+// 	background-size cover
+
++prefix-classes('section-')
+	.sm
+		padding-top 30px
+		padding-bottom 30px
+		+bp(medium)
+			padding-top 75px
+			padding-bottom 75px
+	.xs
+		padding-top 45px
+		padding-bottom 45px
+	.sm-only-bottom
+		padding-bottom 30px
+		+bp(medium)
+			padding-bottom 75px
+	.sm-only-top
+		padding-top 30px
+		+bp(medium)
+			padding-top 75px
+
+
+// [class*='section-']
+// 	h2
+// 		&.title
+// 			font-size 24px
+// 			font-weight 600
+// 			line-height 35px
+// 		&.title2
+// 			font-size 15px
+// 			font-weight 800
+// 			letter-spacing .7px
+// 		&.title3
+// 			font-size 36px
+// 			font-weight 300
+// 			letter-spacing 2px
+// 		&.sub-heading
+// 			font-size 12px
+// 			font-weight 300
+// 			letter-spacing .7px
+// 			padding-bottom 15px
+// 			color #777777
+// 		&.subline
+// 			padding-top 21px
+// 			font-size 12px
+// 			font-weight 400
+// 			letter-spacing 1px
+// 		&.subline2
+// 			padding-top 25px
+// 			font-size 17px
+// 			font-weight 300
+// 			line-height 28px
+
+div.baltic
+	background #3A3D3F
+
+div.gray
+	background #f2f2f2
+
+div.f7
+	background #f7f7f7
+
+div.yellow
+	background #ffd200

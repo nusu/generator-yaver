@@ -19,6 +19,10 @@
         "gulp-watch": "^4.3.11",
         "gulp-webp": "^2.3.0",
         "gulp-defer": "^1.1.2",
-        "pump": "^1.0.1"
+        "pump": "^1.0.1",
+        "gulp-babel": "^7.0.1"
+    },
+    "babel": {
+        "presets": ["es2015"]
     }
 }

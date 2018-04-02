@@ -1,0 +1,28 @@
+.inline-center-list
+	text-align center
+	li
+		display inline-block
+
++prefix-classes('li-')
+	.sm
+		li
+			margin 15px
+			+bp(medium)
+				margin 8px
+			+bp(large)	
+				margin 15px
+	.md
+		li
+			margin 30px
+			+bp(medium)
+				margin 8px
+			+bp(large)	
+				margin 30px
+	// fit for 3 references block
+	.ref
+		li
+			margin 0 18px
+			&:first-child
+				margin 0
+			&:last-child
+				margin 0

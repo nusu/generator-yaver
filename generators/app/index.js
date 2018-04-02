@@ -37,15 +37,15 @@ contains: function(needle) {
 
   prompting: function () {
 	// Have Yaver greet the user.
-this.log('\n');
-this.log('         .-"-.     ');
-this.log('       _/.-.-.\\_   ');
-this.log('      ( ( o o ) )  ');
-this.log('       |/  "  \\|   ');
-this.log('        \\ .-. /    ');
-this.log('        /`"""`\\    ');
-this.log('       /       \\   ');
-this.log('         Yaver! \n \n');
+	this.log('\n');
+	this.log('         .-"-.     ');
+	this.log('       _/.-.-.\\_   ');
+	this.log('      ( ( o o ) )  ');
+	this.log('       |/  "  \\|   ');
+	this.log('        \\ .-. /    ');
+	this.log('        /`"""`\\    ');
+	this.log('       /       \\   ');
+	this.log('         Yaver! \n \n');
 
 
 	var prompts = [
@@ -87,6 +87,16 @@ this.log('         Yaver! \n \n');
 				{
 					name: 'Cookie.js',
 					value: 'cookie',
+					checked: false
+				},
+				{
+					name: 'Google Maps',
+					value: 'googlemap',
+					checked: false
+				},
+				{
+					name: 'Animation Library',
+					value: 'animation',
 					checked: false
 				}
 			]
@@ -193,6 +203,8 @@ this.log('         Yaver! \n \n');
 	  this.lightslider = hasFeature(this.props.plugins, "lightslider");
 	  this.viewportfixer = hasFeature(this.props.plugins, "viewportfixer");
 	  this.cookie = hasFeature(this.props.plugins, "cookie");
+	  this.animation = hasFeature(this.props.plugins, "animation");
+	  this.googlemap = hasFeature(this.props.plugins, "googlemap");
 
 	  if(this.fontawesome){
 		this.fs.copy(sourceRoot + '/libs/fonts/fontawesome/*', asDir + '/fonts/');
@@ -267,6 +279,23 @@ this.log('         Yaver! \n \n');
 		var cookieRoot = destRoot + "/demo/cookie/";
 		mkdirp(cookieRoot);
 		this.fs.copy(sourceRoot + '/libs/demo/cookie/*', cookieRoot); 
+	  }
+
+	  if(this.googlemap){
+	  	this.fs.copy(sourceRoot + '/libs/js/google-map.js', devDir + '/js/libs/google-map.js');
+	  }
+
+	  if(this.animation){
+	  	this.fs.copy(sourceRoot + '/libs/css/animation.styl', devDir + '/stylus/libs/animation.styl');
+	  	this.fs.copy(sourceRoot + '/libs/js/nuscroll.js', devDir + '/js/libs/nuscroll.js');
+
+		//
+		// demo assets
+		//
+
+		// var cookieRoot = destRoot + "/demo/cookie/";
+		// mkdirp(cookieRoot);
+		// this.fs.copy(sourceRoot + '/libs/demo/cookie/*', cookieRoot); 	
 	  }
 
   },
